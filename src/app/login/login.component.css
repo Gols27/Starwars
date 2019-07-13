@@ -61,7 +61,8 @@ tags-input {
 	color: #d1cb03;
     font-family: cursive;
     margin: 5px 0px;
-    padding: 3px
+	padding: 3px;
+	overflow: hidden;
 }
 .width30 {
 	width: 29%;
