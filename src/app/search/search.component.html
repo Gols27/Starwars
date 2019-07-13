@@ -19,7 +19,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let planet of planetList | filter:searchText">
+        <tr *ngFor="let planet of planetList | filter: searchText">
           <td>{{planet.name}}</td>
           <td>{{planet.rotation_period}}</td>
           <td>{{planet.orbital_period}}</td>
