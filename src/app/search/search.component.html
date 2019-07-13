@@ -3,9 +3,10 @@
   </div>
   <div class="container">
     <div class="row">
-      <div class="search-hero">
-        <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Start searching for a planet">
-      </div>
+      <div class="col-sm-6">
+        <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Start searching for a planet by name">
+      </div><br/><br/>
+      <hr />
       <table class="table table-striped">
         <thead>
         <tr>
@@ -19,6 +20,7 @@
         </tr>
         </thead>
         <tbody>
+        <tr *ngIf="!planetList">Loading...</tr>
         <tr *ngFor="let planet of planetList | filter: searchText">
           <td>{{planet.name}}</td>
           <td>{{planet.rotation_period}}</td>
