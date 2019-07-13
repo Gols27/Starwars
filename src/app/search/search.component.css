@@ -1,9 +1,9 @@
-.section-table {
-    display: flex;
-    justify-content: space-between;
+.sw_bg1{
+    background: url("../../assets/sw_bg1.jpg") no-repeat center center fixed;
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
 }
 
-
-input.ng-invalid.ng-touched {
-    border-color: red;
-}

@@ -1,47 +1,46 @@
-<div class="container text-center">
-    <h1>{{title}}</h1>
+<div class="sw_bg1">
+  <div class="container text-center ">
+    <h1 style="color: white;">{{title}}</h1>
   </div>
   <div class="container">
     <div class="row">
       <div class="col-sm-6">
-        <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Start searching for a planet by name">
-      </div><br/><br/>
+        <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+          placeholder="Start searching for a planet by name">
+      </div><br /><br />
 
       <div class="col-sm-6">
-          <tag-input [ngModel]="['hardocoded-item']">
-              <tag-input-dropdown
-                [autocompleteItems]="planetNameList"
-                [showDropdownIfEmpty]="true"
-                [dynamicUpdate]="false"
-              >
-              </tag-input-dropdown>
-            </tag-input>
+        <tag-input [ngModel]="[]">
+          <tag-input-dropdown [autocompleteItems]="planetNameList" [showDropdownIfEmpty]="true" [dynamicUpdate]="false">
+          </tag-input-dropdown>
+        </tag-input>
       </div>
       <hr />
-      <table class="table table-striped">
+      <table class="table table-striped" style="color: white;">
         <thead>
-        <tr>
-          <th>Name</th>
-          <th>Rotation Period</th>
-          <th>Orbital Period</th>
-          <th>Diamter</th>
-          <th>Climate</th>
-          <th>Terrain</th>
-          <th>Population</th>
-        </tr>
+          <tr>
+            <th>Name</th>
+            <th>Rotation Period</th>
+            <th>Orbital Period</th>
+            <th>Diamter</th>
+            <th>Climate</th>
+            <th>Terrain</th>
+            <th>Population</th>
+          </tr>
         </thead>
         <tbody>
-        <tr *ngIf="!planetList">Loading...</tr>
-        <tr *ngFor="let planet of planetList | filter: searchText">
-          <td>{{planet.name}}</td>
-          <td>{{planet.rotation_period}}</td>
-          <td>{{planet.orbital_period}}</td>
-          <td>{{planet.diameter}}</td>
-          <td>{{planet.climate}}</td>
-          <td>{{planet.terrain}}</td>
-          <td>{{planet.population}}</td>
-        </tr>
+          <tr *ngIf="!planetList">Loading...</tr>
+          <tr *ngFor="let planet of planetList | filter: searchText">
+            <td>{{planet.name}}</td>
+            <td>{{planet.rotation_period}}</td>
+            <td>{{planet.orbital_period}}</td>
+            <td>{{planet.diameter}}</td>
+            <td>{{planet.climate}}</td>
+            <td>{{planet.terrain}}</td>
+            <td>{{planet.population}}</td>
+          </tr>
         </tbody>
       </table>
     </div>
   </div>
+</div>
