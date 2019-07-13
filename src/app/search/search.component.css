@@ -7,3 +7,24 @@
     width: 100%;
 }
 
+.sw_text1 {
+    margin-top: 15px;
+    border-radius: 25px;
+    color: #d1cb03;
+    font-family: cursive;
+    font-size: 20px;
+    padding: 5px;
+    border: 1px solid #d1cb03;
+    cursor: pointer;
+}
+
+.sw_text {
+	color: #131312 !important;
+    text-shadow: 4px 4px 4px #d1cb03;
+    font-family: cursive;
+}
+
+.right-align {
+	float: right;
+	padding-right: 80px;
+}

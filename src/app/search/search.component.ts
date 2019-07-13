@@ -35,6 +35,11 @@ export class SearchComponent implements OnInit {
     });
   }
 
-
+  logOut(): void{
+    if ( sessionStorage.getItem('loggerName') ) {
+      sessionStorage.setItem('loggerName', '');
+      this.router.navigate(['login']);
+    }
+  }
 
 }
