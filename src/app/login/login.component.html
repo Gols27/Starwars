@@ -1,0 +1,32 @@
+<div class=" sw_background ">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 sw-logo-container">
+        <div class="right-align"><div class="sw_logo"></div></div>
+        <h2 class="sw_text">Welcome to {{title}}</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="login-container">
+          <form [formGroup]='loginForm'>
+          <div class="login-div">
+            <div class="right-align form-group"><input type="text" formControlName="name"></div>
+            <div class="left-align login-div">UserName</div>
+
+          </div>
+          <div class="login-div">
+            <div class="right-align form-group"><input type="password" formControlName="passcode"></div>
+            <div class="left-align login-div">Passcode</div>
+          </div>
+          <div class="center-align">
+            <button class="btn btn-primary" (click)="logIn(loginForm)">Log In</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

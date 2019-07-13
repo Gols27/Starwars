@@ -1,0 +1,9 @@
+.section-table {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+input.ng-invalid.ng-touched {
+    border-color: red;
+}
