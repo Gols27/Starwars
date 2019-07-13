@@ -26,6 +26,7 @@
     "bootstrap": "^4.3.1",
     "jquery": "^3.4.1",
     "ng-circle-progress": "^1.4.1",
+    "ng2-search-filter": "^0.5.1",
     "ngx-bootstrap": "^4.3.0",
     "popper": "^1.0.1",
     "rxjs": "~6.4.0",

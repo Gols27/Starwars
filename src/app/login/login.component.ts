@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, NgForm, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { findIndex } from 'underscore';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
   passcode: string;
   personList: any[];
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient) {
+  constructor(private formBuilder: FormBuilder, private http: HttpClient,private router: Router) {
     this.loginForm = formBuilder.group({
       name: ['', Validators.required],
       passcode: ['', Validators.required],
@@ -48,7 +49,7 @@ export class LoginComponent implements OnInit {
     } else if (this.personList[index].birth_year !== this.passcode) {
         alert( 'Passcode in incorrect Mr. ' + this.name);
     } else {
-        console.log('go');
+      this.router.navigate(['search']);
     }
   }
 

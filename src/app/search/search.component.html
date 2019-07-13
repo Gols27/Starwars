@@ -1,3 +1,34 @@
-<div class="section-main" id="order-page">
-  Order Works!
-</div>
+<div class="container text-center">
+    <h1>{{title}}</h1>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="search-hero">
+        <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Start searching for a planet">
+      </div>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Rotation Period</th>
+          <th>Orbital Period</th>
+          <th>Diamter</th>
+          <th>Cliamte</th>
+          <th>Terrain</th>
+          <th>Population</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let planet of planetList | filter:searchText">
+          <td>{{planet.name}}</td>
+          <td>{{planet.rotation_period}}</td>
+          <td>{{planet.orbital_period}}</td>
+          <td>{{planet.diameter}}</td>
+          <td>{{planet.climate}}</td>
+          <td>{{planet.terrain}}</td>
+          <td>{{planet.population}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
