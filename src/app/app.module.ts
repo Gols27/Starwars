@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
-
+import { TagInputModule } from 'ngx-chips';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { LoginComponent } from './login/login.component';
@@ -28,6 +28,7 @@ import { searchNamePipe } from '../searchName.pipe';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    TagInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

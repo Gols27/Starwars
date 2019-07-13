@@ -11,6 +11,7 @@ export class SearchComponent implements OnInit {
  title: string =  'Search Planets';
  searchText: string;
  planetList: any[];
+ planetNameList: any[];
   constructor(private http: HttpClient) {
 
   }
@@ -26,6 +27,7 @@ export class SearchComponent implements OnInit {
        }).sort((a, b) => {
           return b.population - a.population;
         });
+      this.planetNameList = this.planetList.map(item => item.name);
     }, error => {
       console.log(error);
     });
