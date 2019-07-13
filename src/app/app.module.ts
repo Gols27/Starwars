@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { searchNamePipe } from '../searchName.pipe';
 
@@ -28,7 +29,8 @@ import { searchNamePipe } from '../searchName.pipe';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    TagInputModule
+    TagInputModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

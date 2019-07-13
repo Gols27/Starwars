@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChildren, QueryList } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, NgForm, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-order',
@@ -12,8 +12,10 @@ export class SearchComponent implements OnInit {
  searchText: string;
  planetList: any[];
  planetNameList: any[];
-  constructor(private http: HttpClient) {
-
+  constructor(private http: HttpClient, private router: Router) {
+    if( !sessionStorage.getItem('loggerName') ){
+      this.router.navigate(['login']);
+    }
   }
 
   ngOnInit() {
@@ -29,7 +31,7 @@ export class SearchComponent implements OnInit {
         });
       this.planetNameList = this.planetList.map(item => item.name);
     }, error => {
-      console.log(error);
+      console.error('There is some issue with the server response, please try after some time');
     });
   }
 
