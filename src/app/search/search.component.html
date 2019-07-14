@@ -1,37 +1,41 @@
 <div class="sw_bg1 container-fluid">
-    <div class="row">
-        <div class="col-md-12 sw-logo-container">
-          <div class="right-align">
-            <div (click)="logOut()" class="sw_text1">Log Out</div>
-          </div>
-          <h2 class="sw_text">May The Force Be With You</h2>
-          <h5 class="sw_text center-align">{{title}}</h5>
-        </div>
+  <div class="row">
+    <div class="col-md-12 sw-logo-container">
+      <div class="right-align">
+        <div (click)="logOut()" class="sw_text1">Log Out</div>
       </div>
-  <!-- <div class="container text-center ">
-    <h1 style="color: white;">{{title}}</h1>
-  </div> -->
+      <h2 class="sw_text">May The Force Be With You</h2>
+      <h5 class="sw_text center-align">{{title}}</h5>
+    </div>
+  </div>
   <div class="container">
     <div class="row">
       <div class="col-sm-6">
-        <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
-          placeholder="Start searching for a planet by name">
-      </div><br /><br />
-
-      <div class="col-sm-6">
-        <tag-input [ngModel]="[]">
-          <tag-input-dropdown [autocompleteItems]="planetNameList" [showDropdownIfEmpty]="true" [dynamicUpdate]="false">
+        <tag-input [ngModel]="[]" (onAdd)="addChip($event)" (onRemove)="removeChip($event)" theme="bootstrap">
+          <tag-input-dropdown [identifyBy]="'name'" [displayBy]="'name'" [autocompleteItems]="planetNameList"
+            [showDropdownIfEmpty]="true" [dynamicUpdate]="false">
+            <ng-template let-item="item" let-index="index">
+              <div index="index" [ngClass]="{'font-weight': index=='0' || index == '1'}">
+                <span class="planetName">{{item.name}}</span>
+                <span class="planetPopulation">{{item.population}}</span>
+              </div>
+            </ng-template>
           </tag-input-dropdown>
         </tag-input>
       </div>
-      <hr />
-      <table class="table table-striped" style="color: white;">
+      <div class="col-sm-6">
+        <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+          placeholder="Start searching for a planet by name">
+      </div>
+      <br /><br /><br />
+
+      <table class="table" style="color: white;">
         <thead>
           <tr>
             <th>Name</th>
             <th>Rotation Period</th>
             <th>Orbital Period</th>
-            <th>Diamter</th>
+            <th>Diameter</th>
             <th>Climate</th>
             <th>Terrain</th>
             <th>Population</th>

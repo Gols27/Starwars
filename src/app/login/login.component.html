@@ -6,21 +6,24 @@
         <h2 class="sw_text">Welcome to {{title}}</h2>
       </div>
     </div>
-    <div class="row">
-      <div class="col-xs-12">
+    <div class="row justify-content">
+      <div class="col-md-4 col-lg-4 col-xs-6">
         <div class="login-container">
           <form [formGroup]='loginForm'>
           <div class="login-div">
             <div class="right-align form-group"><input type="text" formControlName="name"></div>
             <div class="left-align login-div">UserName</div>
-
+            <label class="validate" *ngIf="loginForm.get('name').hasError('required') &&
+            loginForm.get('name').touched">User Name is required</label>
           </div>
           <div class="login-div">
             <div class="right-align form-group"><input type="password" formControlName="passcode"></div>
-            <div class="left-align login-div">Passcode</div>
+            <div class="left-align login-div">Password</div>
+            <label class="validate" *ngIf="loginForm.get('passcode').hasError('required') &&
+            loginForm.get('passcode').touched">Password is required</label>
           </div>
           <div class="center-align">
-            <button class="btn btn-primary" (click)="logIn(loginForm)">Log In</button>
+            <button class="btn btn-primary sw_text1" (click)="logIn(loginForm)" [disabled]="loginForm.invalid">Log In</button>
           </div>
           </form>
         </div>

@@ -6,6 +6,7 @@
     background-size: cover;
     height: 100%;
     width: 100%;
+    min-height: 750px;
 }
 .sw_logo {
 	    background: url("../../assets/sw_logo.png");
@@ -15,6 +16,10 @@
     height: 100px;
     width: 180px;
 }
+
+.justify-content {
+    justify-content: center;
+}
 .container-fluid {
 	margin-top: -20px;
 }
@@ -23,16 +28,31 @@
     text-shadow: 4px 4px 4px #d1cb03;
     font-family: cursive;
 }
+.sw_text1 {
+    margin-top: 15px;
+    border-radius: 25px;
+    color: #d1cb03;
+    font-family: cursive;
+    font-size: 20px;
+    padding: 5px;
+    border: 1px solid #d1cb03;
+    cursor: pointer;
+    background: transparent;
+}
+label.validate {
+    color: red;
+}
 
 .sw-logo-container {
-	padding-bottom: 100px;
+    padding-bottom: 100px;
+    margin-top: 27px;
 }
 .center-align {
 	text-align: center;
 }
 .login-container {
     margin: 0px auto;
-    width: 50%;
+    text-align: center;
     border: 1px solid #d1cb03;
     border-radius: 25px;
     padding: 10px;

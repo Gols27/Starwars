@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AgGridModule } from 'ag-grid-angular';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -25,7 +24,6 @@ import { searchNamePipe } from '../searchName.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AgGridModule.withComponents([]),
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,

@@ -42,9 +42,9 @@ export class LoginComponent implements OnInit {
   logInAuthorize() {
     const index = findIndex(this.personList, { 'name': this.name.trim()});
     if (index === -1) {
-      alert( 'Name doesnt matches our records.');
+      alert( 'User Name is incorrect');
     } else if (this.personList[index].birth_year !== this.passcode) {
-        alert( 'Passcode in incorrect Mr. ' + this.name);
+        alert( 'Password is incorrect Mr. ' + this.name);
     } else {
       sessionStorage.setItem('loggerName', this.name);
       this.router.navigate(['search']);
